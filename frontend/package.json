@@ -1,4 +1,8 @@
-﻿{
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\system32> cat C:\Users\robby\Releases\sorcery-qa-studio\frontend\package.json
+{
   "name": "sorcery-qa-studio-frontend",
   "version": "1.0.0",
   "main": "App.jsx",
