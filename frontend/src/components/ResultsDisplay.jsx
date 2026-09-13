@@ -1,16 +1,16 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function ResultsDisplay({ results }) {
   const [filter, setFilter] = useState('all');
 
-  const filteredIssues = filter === 'all' 
-    ? results.issues 
+  const filteredIssues = filter === 'all'
+    ? results.issues
     : results.issues.filter(i => i.severity === filter);
 
   return (
     <div className="results-container">
-      <h2>📊 Analysis Results</h2>
-      
+      <h2>?? Analysis Results</h2>
+
       <div className="filter-buttons">
         <button onClick={() => setFilter('all')}>All Issues ({results.issues.length})</button>
         <button onClick={() => setFilter('critical')}>Critical ({results.critical_count})</button>
@@ -20,7 +20,7 @@ export default function ResultsDisplay({ results }) {
 
       <div className="issues-list">
         {filteredIssues.map((issue, idx) => (
-          <div key={idx} className={issue-card severity-\}>
+          <div key={idx} className={`issue-card severity-${issue.severity}`}>
             <h3>{issue.type}</h3>
             <p><strong>Severity:</strong> {issue.severity}</p>
             <p><strong>Message:</strong> {issue.message}</p>

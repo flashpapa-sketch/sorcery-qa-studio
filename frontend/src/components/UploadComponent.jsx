@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function UploadComponent({ onAnalysisComplete }) {
@@ -18,13 +18,15 @@ export default function UploadComponent({ onAnalysisComplete }) {
       const formData = new FormData();
       formData.append('file', selectedFile);
 
+      const token = localStorage.getItem('auth_token') || '';
+
       const response = await axios.post(
-        \/api/analysis/analyze,
+        '/api/analysis/analyze',
         formData,
         {
           headers: {
             'Content-Type': 'multipart/form-data',
-            'Authorization': Bearer \
+            'Authorization': token ? `Bearer ${token}` : ''
           }
         }
       );
@@ -41,7 +43,7 @@ export default function UploadComponent({ onAnalysisComplete }) {
   return (
     <div className="upload-container">
       <div className="upload-area">
-        <h2>📤 Upload Game File</h2>
+        <h2>?? Upload Game File</h2>
         <input
           type="file"
           accept=".html,.htm"
