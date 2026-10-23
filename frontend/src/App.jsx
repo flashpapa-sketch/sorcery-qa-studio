@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/sorcerous.css';
 import UploadComponent from './components/UploadComponent';
 import ResultsDisplay from './components/ResultsDisplay';
@@ -7,8 +7,7 @@ import DashBoard from './components/DashBoard';
 export default function App() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const [analysisResults, setAnalysisResults] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState(null);
+  const [, setUser] = useState(null);
 
   useEffect(() => {
     // Check auth
