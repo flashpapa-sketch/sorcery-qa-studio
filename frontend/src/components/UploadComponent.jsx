@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function UploadComponent({ onAnalysisComplete }) {
-  const [file, setFile] = useState(null);
+  const [, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
